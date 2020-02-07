@@ -1,0 +1,408 @@
+{
+    "subjects": [
+        {
+            "id": 0,
+            "name": "Üldotstarbelised arendusplatvormid",
+            "icon": "",
+            "times": [
+                "08:15 - 11:45",
+                "12:15 - 15:45"
+            ],
+            "rooms": [
+                "M-217",
+                "A-406"
+            ],
+            "links": [
+                ["#", "null"]
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Interaktsioonidisain",
+            "icon": "",
+            "times": [
+                "08:15 - 11:45",
+                "12:15 - 15:45",
+                "16:15 - 17:45"
+            ],
+            "rooms": [
+                "A-406",
+                "A-543",
+                "M-217"
+            ],
+            "links": [
+                ["#", "null"]
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Veeb ja meedia elemendid",
+            "icon": "",
+            "times": [
+                "08:15 - 11:45"
+            ],
+            "rooms": [
+                "S-303"
+            ],
+            "links": [
+                ["#", "null"]
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Objektorienteeritud programmeerimine",
+            "icon": "",
+            "times": [
+                "08:15 - 11:45",
+                "12:15 - 15:45"
+            ],
+            "rooms": [
+                "A-406",
+                "M-217"
+            ],
+            "links": [
+                ["#", "null"]
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Hulgateooria ja loogika elemendid",
+            "icon": "",
+            "times": [
+                "10:15 - 11:45",
+                "12:15 - 13:45"
+            ],
+            "rooms": [
+                "A-543"
+            ],
+            "links": [
+                ["#", "null"]
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Tarkvara testimise alused",
+            "icon": "",
+            "times": [
+                "14:15 - 15:45"
+            ],
+            "rooms": [
+                "A-402"
+            ],
+            "links": [
+                ["#", "null"]
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Eesrakenduste arendamine",
+            "icon": "",
+            "times": [
+                "08:15 - 09:45",
+                "16:15 - 17:45"
+            ],
+            "rooms": [
+                "A-406",
+                "M-217",
+                "M-543"
+            ],
+            "links": [
+                ["#", "null"]
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Sissejuhatus infosüsteemidesse",
+            "icon": "",
+            "times": [
+                "10:15 - 11:45",
+                "12:15 - 13:45",
+                "14:15 - 15:45"
+            ],
+            "rooms": [
+                "A-543",
+                "A-406",
+                "T-302"
+            ],
+            "links": [
+                ["#", "null"]
+            ]
+        }
+    ],
+    "first": [
+        [
+            {
+                "id": 1,
+                "room": 0,
+                "time": 0,
+                "start": 2,
+                "end": 4,
+                "week": 1
+            },
+            {
+                "id": 0,
+                "room": 1,
+                "time": 1,
+                "start": 4,
+                "end": 6,
+                "week": 2
+            },
+            {
+                "id": 1,
+                "room": 1,
+                "time": 2,
+                "start": 6,
+                "end": 7,
+                "week": 0
+            }
+        ],
+        [
+            {
+                "id": 3,
+                "room": 0,
+                "time": 0,
+                "start": 2,
+                "end": 4,
+                "week": 2
+            },
+            {
+                "id": 4,
+                "room": 0,
+                "time": 1,
+                "start": 4,
+                "end": 5,
+                "week": 2
+            },
+            {
+                "id": 5,
+                "room": 0,
+                "time": 0,
+                "start": 5,
+                "end": 6,
+                "week": 2
+            },
+            {
+                "id": 6,
+                "room": 0,
+                "time": 1,
+                "start": 6,
+                "end": 7,
+                "week": 2
+            }
+        ],
+        [
+        ],
+        [
+            {
+                "id": 4,
+                "room": 0,
+                "time": 0,
+                "start": 3,
+                "end": 4,
+                "week": 2
+            },
+            {
+                "id": 7,
+                "room": 0,
+                "time": 1,
+                "start": 4,
+                "end": 5,
+                "week": 2
+            },
+            {
+                "id": 7,
+                "room": 1,
+                "time": 2,
+                "start": 5,
+                "end": 6,
+                "week": 2
+            }
+        ],
+        [
+        ]
+    ],
+    "second": [
+        [
+            {
+                "id": 1,
+                "room": 1,
+                "time": 2,
+                "start": 6,
+                "end": 7,
+                "week": 0
+            }
+        ],
+        [
+            {
+                "id": 0,
+                "room": 0,
+                "time": 0,
+                "start": 2,
+                "end": 4,
+                "week": 2
+            },
+            {
+                "id": 4,
+                "room": 0,
+                "time": 1,
+                "start": 4,
+                "end": 5,
+                "week": 2
+            },
+            {
+                "id": 5,
+                "room": 0,
+                "time": 0,
+                "start": 5,
+                "end": 6,
+                "week": 2
+            }
+        ],
+        [
+            {
+                "id": 1,
+                "room": 2,
+                "time": 1,
+                "start": 4,
+                "end": 6,
+                "week": 1
+            }
+        ],
+        [
+            {
+                "id": 4,
+                "room": 0,
+                "time": 0,
+                "start": 3,
+                "end": 4,
+                "week": 2
+            },
+            {
+                "id": 7,
+                "room": 0,
+                "time": 1,
+                "start": 4,
+                "end": 5,
+                "week": 2
+            }
+        ],
+        [
+            {
+                "id": 6,
+                "room": 2,
+                "time": 0,
+                "start": 2,
+                "end": 3,
+                "week": 2
+            },
+            {
+                "id": 7,
+                "room": 1,
+                "time": 0,
+                "start": 3,
+                "end": 4,
+                "week": 2
+            },
+            {
+                "id": 3,
+                "room": 1,
+                "time": 1,
+                "start": 4,
+                "end": 6,
+                "week": 2
+            }
+        ]
+    ],
+    "third": [
+        [
+            {
+                "id": 1,
+                "room": 1,
+                "time": 2,
+                "start": 6,
+                "end": 7,
+                "week": 0
+            }
+        ],
+        [
+            {
+                "id": 2,
+                "room": 0,
+                "time": 0,
+                "start": 2,
+                "end": 4,
+                "week": 2
+            },
+            {
+                "id": 4,
+                "room": 0,
+                "time": 1,
+                "start": 4,
+                "end": 5,
+                "week": 2
+            },
+            {
+                "id": 5,
+                "room": 0,
+                "time": 0,
+                "start": 5,
+                "end": 6,
+                "week": 2
+            }
+        ],
+        [
+            {
+                "id": 1,
+                "room": 2,
+                "time": 0,
+                "start": 2,
+                "end": 4,
+                "week": 1
+            }
+        ],
+        [
+            {
+                "id": 6,
+                "room": 1,
+                "time": 0,
+                "start": 2,
+                "end": 3,
+                "week": 2
+            },
+            {
+                "id": 4,
+                "room": 0,
+                "time": 0,
+                "start": 3,
+                "end": 4,
+                "week": 2
+            },
+            {
+                "id": 7,
+                "room": 0,
+                "time": 1,
+                "start": 4,
+                "end": 5,
+                "week": 2
+            }
+        ],
+        [
+            {
+                "id": 3,
+                "room": 1,
+                "time": 0,
+                "start": 2,
+                "end": 4,
+                "week": 2
+            },
+            {
+                "id": 7,
+                "room": 2,
+                "time": 1,
+                "start": 4,
+                "end": 5,
+                "week": 2
+            }
+        ]
+    ]
+}
