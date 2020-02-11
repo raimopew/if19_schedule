@@ -1,18 +1,18 @@
 /* jshint esversion: 6 */
 
 var theme = {
-	color: "light", 
-	highlight: "yellow",
-	light: "Switch to dark", 
-	dark: "Switch to light"
+    color: "light",
+    highlight: "#D8C3A5",
+    light: "Switch to dark",
+    dark: "Switch to light"
 };
 
 var currentTab;
 let params;
 
 var day = new Date().getDay();
-var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    
+var days = ["Pühapäev", "Esmaspäev", "Teisipäev", "Kolmapäev", "Neljapäev", "Reede", "Lauppäev"];
+
 let jsonUrl = "data.json";
 
 let data = $.ajax({
@@ -24,37 +24,42 @@ let data = $.ajax({
 let oddOrEvenWeek = getNumberOfWeek() % 2;
 
 $(document).ready(() => {
-    // should consider 'URLSearchParams' in window
     params = new URLSearchParams(window.location.search);
 
-    if (!params.has("theme") && !params.has("group")){
+    if (!params.has("theme") && !params.has("group")) {
         params.append("group", "1");
         params.append("theme", "light");
         params.append("showIcons", "false");
         updateSearchParams();
     }
 
-	if (params.get("group") == 1){
+    if (params.get("group") == 1) {
         checkedTab(true, false, false);
-	} else if (params.get("group") == 2){
-		checkedTab(false, true, false);
-	} else if (params.get("group") == 3){
-		checkedTab(false, false, true);
-	} 
+    } else if (params.get("group") == 2) {
+        checkedTab(false, true, false);
+    } else if (params.get("group") == 3) {
+        checkedTab(false, false, true);
+    }
 
-	if (params.has("theme") && params.get("theme") === "dark") { 
-        changeTheme("dark"); 
+    if (params.has("theme") && params.get("theme") === "dark") {
+        changeTheme("dark");
     } else {
         $('.theme').html(theme.light);
     }
 
-	$('#tab-1').on('click', () => { updateGroup("1"); });
-    $('#tab-2').on('click', () => {	updateGroup("2"); });
-	$('#tab-3').on('click', () => { updateGroup("3"); });
+    $('#tab-1').on('click', () => {
+        updateGroup("1");
+    });
+    $('#tab-2').on('click', () => {
+        updateGroup("2");
+    });
+    $('#tab-3').on('click', () => {
+        updateGroup("3");
+    });
 
-	$('.theme').on('click', (e) => {
-		theme.color === "light" ? changeTheme("dark") : changeTheme("light");
-	});
+    $('.theme').on('click', (e) => {
+        theme.color === "light" ? changeTheme("dark") : changeTheme("light");
+    });
 
     createContent(data.first, "table1");
     createContent(data.second, "table2");
@@ -84,12 +89,12 @@ $(document).ready(() => {
 
 });
 
-function toggleImages(string){
-    if (string === "true"){
+function toggleImages(string) {
+    if (string === "true") {
         $('.icon').show();
-        $('.toggleImg').html("Hide icons")
+        $('.toggleImg').html("Hide icons");
         $('.room').css("padding-right", "0px");
-    } else if (string === "false"){
+    } else if (string === "false") {
         $('.icon').hide();
         //$('.toggleImg').html("Show icons");
         $('.room').css("padding-right", "5px");
@@ -98,12 +103,12 @@ function toggleImages(string){
     updateSearchParams();
 }
 
-function updateSearchParams(){
+function updateSearchParams() {
     window.history.replaceState({}, '', `${location.pathname}?${params}`);
 }
 
-function updateGroup(number){
-    if (params.has("group")){
+function updateGroup(number) {
+    if (params.has("group")) {
         params.set("group", number);
     } else {
         params.append("group", number);
@@ -112,31 +117,31 @@ function updateGroup(number){
     hideAllPopovers();
 }
 
-function hideAllPopovers(){
+function hideAllPopovers() {
     $('[data-toggle="popover"]').not(this).popover('hide');
 }
 
-function createContent(group, target){
+function createContent(group, target) {
 
     let columnStart = 1, columnEnd = 2;
     let rowStart = 1, rowEnd = 2;
 
-    $.each(group, function(i){
-        let span = createSpan(days[i+1]);
+    $.each(group, function (i) {
+        let span = createSpan(days[i + 1]);
 
         createSubjectDiv(rowStart, rowEnd, columnStart, columnEnd, span, "tableHeader", target);
 
-        $.each(this, function(y){
+        $.each(this, function (y) {
             let currentDiv = document.createElement("div");
             currentDiv.className = "inner";
 
             let rowStart, rowEnd, time, p;
-            let subject = ""; 
+            let subject = "";
             let room = "";
 
-            if (group[i][y].week === oddOrEvenWeek || group[i][y].week === 2){
+            if (group[i][y].week === oddOrEvenWeek || group[i][y].week === 2) {
 
-                if (group[i][y].id.length > 0){
+                if (group[i][y].id.length > 0) {
                     let appendOnce = true;
 
                     $.each(group[i][y].id, (x) => {
@@ -147,8 +152,8 @@ function createContent(group, target){
                         }
                         room = data.subjects[this.id[x]].rooms[this.room[x]];
                         subject = data.subjects[this.id[x]].name;
-                        roomAndSubject = room + " " + subject; 
-                        
+                        roomAndSubject = room + " " + subject;
+
                         p = createSpan(room, "room" + " " + this.id[x]);
                         currentDiv.append(p);
                         currentDiv.append(createSpan(subject, this.id[x], true));
@@ -169,7 +174,7 @@ function createContent(group, target){
                 rowStart = group[i][y].start;
                 rowEnd = group[i][y].end;
 
-                createSubjectDiv(rowStart, rowEnd, columnStart, columnEnd, currentDiv, "handdrawnbox " + days[i+1], target);
+                createSubjectDiv(rowStart, rowEnd, columnStart, columnEnd, currentDiv, "handdrawnbox " + days[i + 1], target);
 
             }
 
@@ -181,18 +186,18 @@ function createContent(group, target){
     });
 }
 
-function createSubjectDiv(rowStart, rowEnd, columnStart, columnEnd, contentCombined, divClass, target){
+function createSubjectDiv(rowStart, rowEnd, columnStart, columnEnd, contentCombined, divClass, target) {
 
     let div = document.createElement("div");
     div.setAttribute("style", "grid-row: " + rowStart + " / " + rowEnd + "; grid-column: " + columnStart + " / " + columnEnd + ";");
-    div.className =  divClass;
+    div.className = divClass;
     div.appendChild(contentCombined);
     let currentDiv = document.getElementById(target);
-    
+
     currentDiv.appendChild(div);
 }
 
-function createSpan(content, className, popover){
+function createSpan(content, className, popover) {
     let span = document.createElement("span");
     let icon;
     if (typeof className !== 'undefined') span.className = className;
@@ -202,7 +207,7 @@ function createSpan(content, className, popover){
         icon = document.createElement("img");
         icon.src = "icons/subjecticons/" + data.subjects[className].icon;
         icon.className = "icon";
-        */ 
+        */
 
         if (!isNaN(className)) span.classList.add("subject");
 
@@ -211,15 +216,15 @@ function createSpan(content, className, popover){
         span.setAttribute("data-toggle", "popover");
 
         let link = "";
-        if (data.subjects[className].links.length > 1){
+        if (data.subjects[className].links.length > 1) {
             $.each(data.subjects[className].links, (index, element) => {
                 link += '<a target="_blank" class="aPopover" href="' + element[0] + '">' + element[1] + '</a>';
-                if (data.subjects[className].links.length-1 !== index){
+                if (data.subjects[className].links.length - 1 !== index) {
                     link += "<br>";
                 }
             });
         } else {
-            if (data.subjects[className].links[0][1] !== "null"){
+            if (data.subjects[className].links[0][1] !== "null") {
                 link = '<a target="_blank" class="aPopover" href="' + data.subjects[className].links[0][0] + '">' + data.subjects[className].links[0][1] + '</a>';
             } else {
                 link = '<p>' + data.subjects[className].links[0][1] + '</p>'
@@ -238,60 +243,82 @@ function createSpan(content, className, popover){
     return span;
 }
 
-function changeTheme(color){
-	theme.color = color;
-	if (color === "dark"){
+/* Changes theme to either Dark or Light*/
+function changeTheme(color) {
+    theme.color = color;
+
+    /* Dark mode */
+    if (color === "dark") {
         $('.theme').html(theme.dark);
         theme.highlight = "#303030";
         params.set("theme", "dark");
         updateSearchParams();
 
-		let defaultDark = {"background-color": "black", "color": "white"}; 
-		$('body,html').css(defaultDark);
-		$('.container').css(defaultDark);
-		$('.table').css(defaultDark);
-		$('a:link, a:visited, a.special:hover').css("color", "white");
-		$('a.special').css("color", "hotpink");
-		$('.more a.under:hover').css({"color": "white", "border-color": "hotpink"});
-		$('.handdrawnbox').css("border", "2px solid #fff");
-		$('.label').css("color", "white");
-		$('.panel').css("background", "#000");
-	} else if (color === "light"){
+        let defaultDark = {"background-color": "black", "color": "white"};
+        $('body,html').css(defaultDark);
+        $('.container').css(defaultDark);
+        $('.table').css(defaultDark);
+        $('a:link, a:visited, a.special:hover').css("color", "#8EE4AF");
+
+        $('a.special').css("color", "#EDF5E1");
+        $('.more a.under:hover').css({"color": "white", "border-color": "#EDF5E1"});
+
+        $('.handdrawnbox').css("border", "2px solid #fff");
+        $('.label').css("color", "white");
+
+        /* sets panel background to default */
+        $('.panel').css("background", "black");
+
+        /* sets grind table background color to default */
+        $('.gridTable').css("background-color", "black")
+
+        /* Light mode */
+    } else if (color === "light") {
         $('.theme').html(theme.light);
-        theme.highlight = "yellow";
+        theme.highlight = "#D8C3A5";
+
+        /* Sets theme to light */
         params.set("theme", "light");
         updateSearchParams();
 
-		let defaultLight = {"background-color": "white", "color": "black"}; 
-		$('body,html').css(defaultLight);
-		$('.container').css(defaultLight);
-		$('.table').css(defaultLight);
-		$('a:link, a:visited, a.special:hover').css("color", "black");
-		$('a.special').css("color", "hotpink");
-		$('.more a.under:hover').css({"color": "black", "border-color": "hotpink"});
-		$('.handdrawnbox').css("border", "2px solid #000");
-		$('.label').css("color", "black");
-        $('.panel').css("background", "#fff");
-	}
+
+        let defaultLight = {"background-color": "#EAE7DC", "color": "black"};
+        $('body,html').css(defaultLight);
+        $('.container').css(defaultLight);
+        $('.table').css(defaultLight);
+        $('a:link, a:visited, a.special:hover').css("color", "black");
+
+        $('a.special').css("color", "#e85a4f");
+        $('.more a.under:hover').css({"color": "black", "border-color": "#e85a4f"});
+
+        $('.handdrawnbox').css("border", "2px solid #000");
+        $('.label').css("color", "black");
+
+        /* sets panel background to default */
+        $('.panel').css("background", "#EAE7DC");
+
+        /* sets grind table background color to default */
+        $('.gridTable').css("background-color", "#EAE7DC")
+    }
     highlightDay();
 }
 
-function checkedTab(statement1, statement2, statement3){
-	$('#tab-1').attr("checked", statement1);
-	$('#tab-2').attr("checked", statement2);
+function checkedTab(statement1, statement2, statement3) {
+    $('#tab-1').attr("checked", statement1);
+    $('#tab-2').attr("checked", statement2);
     $('#tab-3').attr("checked", statement3);
 }
 
-function highlightDay(){
-	if (day === 6 || day === 0){
-		$('#noHighlight').html("No highlight due to it being " + days[day]);
-	} else {
-		$('.handdrawnbox.' + days[day]).css({"background-color": theme.highlight});
-		$('#noHighlight').html("Classes (if any) on " + days[day] + " highlighted");
+function highlightDay() {
+    if (day === 6 || day === 0) {
+        $('#noHighlight').html("No highlight due to it being " + days[day]);
+    } else {
+        $('.handdrawnbox.' + days[day]).css({"background-color": theme.highlight});
+        $('#noHighlight').html("Classes (if any) on " + days[day] + " highlighted");
     }
 }
 
-// thanks to https://gist.github.com/IamSilviu/5899269#gistcomment-2773524
+/* thanks to https://gist.github.com/IamSilviu/5899269#gistcomment-2773524 */
 function getNumberOfWeek() {
     const today = new Date();
     const firstDayOfYear = new Date(today.getFullYear(), 0, 1);

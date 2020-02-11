@@ -1,101 +1,152 @@
 <!DOCTYPE html>
 <html lang="et">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="apple-mobile-web-app-status-bar" content="#000000">
-	<link rel="apple-touch-icon" sizes="180x180" href="icons/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="icons/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="icons/favicons/favicon-16x16.png">
-	<link rel="manifest" href="icons/favicons/site.webmanifest">
-	<link rel="mask-icon" href="icons/favicons/safari-pinned-tab.svg" color="#5bbad5">
-	<link rel="shortcut icon" href="icons/favicons/favicon.ico">
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="msapplication-config" content="icons/favicons/browserconfig.xml">
-	<meta name="theme-color" content="#ffffff">	
-	<link rel="stylesheet" href="style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="index.js"></script>
-	<title>IF19</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="#000000" name="apple-mobile-web-app-status-bar">
+    <link href="icons/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="icons/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="icons/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="icons/favicons/site.webmanifest" rel="manifest">
+    <link color="#D8C3A5" href="icons/favicons/safari-pinned-tab.svg" rel="mask-icon">
+    <link href="icons/favicons/favicon.ico" rel="shortcut icon">
+    <meta content="#da532c" name="msapplication-TileColor">
+    <meta content="icons/favicons/browserconfig.xml" name="msapplication-config">
+    <meta content="#ffffff" name="theme-color">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <title>IF19</title>
 </head>
+
 <body>
-	<div class="customize"><div class="theme"></div><div class="toggleImg"></div></div>
-	<div class="container">
-	<div class="ribbon bottom-right posiFixed hotpink"><a href="https://github.com/raimop/if19_schedule/commits/master" class="aPopover" target="_blank">changelog</a></div>
-	<div class="infoContainer">
-		<div class="ver">2.0.1</div>
-		<div class="by"><a href="https://github.com/raimop">Raimo Pregel</a>, 2020</div>
-		<div class="by"><a href="https://github.com/raimop/if19_schedule">Source</a></div>
-	</div>
-	<h4>IF19</h4>
-	<div class="tabs">
-	<input class="input" name="tabs" type="radio" id="tab-1">
-	<label class="label" for="tab-1">TA I</label>
-	<div class="panel">
-		<table class="gridTable" id="table1"></table>
-	</div>
-	<input class="input" name="tabs" type="radio" id="tab-2">
-	<label class="label" for="tab-2">TA II</label>
-	<div class="panel">
-		<table class="gridTable" id="table2"></table>
-	</div>
-	<input class="input" name="tabs" type="radio" id="tab-3">
-	<label class="label" for="tab-3">DM</label>
-	<div class="panel">
-		<table class="gridTable" id="table3"></table>
-	</div>
-	</div>
-	<div class="info" id="noHighlight">hmm</div>
+<div class="customize">
+    <div class="theme"></div>
+    <div class="toggleImg"></div>
+</div>
+<div class="container">
 
-	<h4>Üldinfo</h4>
-	<ul>
-		<li>
-			<a href="https://www.tlu.ee/asio/kalenterit2/index.php?cluokka=IFIFB-1&kt=lk&guest=intranet%2Ftu&lang=est" class="special" target="_blank">Tunniplaan</a> | 
-			<a href="https://www.tlu.ee/masio/?id=ryhm&ryhm=IFIFB-1" class="special" target="_blank">Mobiilis</a>
-		</li>
-		<li>
-			<a href="https://ois2.tlu.ee/tluois/uus_ois2.tud_leht" class="special" target="_blank">ÕIS</a> | 
-			<a href="http://dti.tlu.ee/digiois/study_programme_version.php?sp=IFIFB/19.DT" class="special" target="_blank">Õppeained</a>
-		</li>
-		<li>
-			Tarkvara: <a href="https://azureforeducation.microsoft.com/devtools" class="special" target="_blank">Microsoftilt</a> | 
-			<a href="https://products.office.com/en/student/office-in-education" class="special" target="_blank">MS Office</a> | 
-			<a href="https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?ws=c5b379d9-989b-e011-969d-0030487d8897" class="special" target="_blank">Muu tarkvara</a> | 
-			<a href="https://education.github.com/pack" class="special" target="_blank">GitHub Education</a>
-		</li>
-	</ul>
-	<h4>Juhised</h4>
-	<ul>
-		<li>Autentimine</li>
-			<ul>
-				<li>Student Admin:ifikas..</li>
-				<li>greeny.cs.tlu.ee | osa_eesnimest + osa_perenimest:pw</li>
-				<li>lin2.tlu.ee | ÕIS kasutaja:pw</li>
-				<li>Tunneli õpetus: <a href="https://www.tlu.ee/sites/default/files/inline-files/Tunneli%20juhend-1.pdf" class="special" target="_blank">FoxyProxyga</a> | 
-					<a href="http://minitorn.tlu.ee/~jaagup/kool/java/kursused/09/veebipr/naited/greenytunnel/greenytunnel.pdf" class="special" target="_blank">localhostiga</a>
-				</li>
-			</ul>
-		<li>Git</li>
-			<ol>
-				<li>git status</li>
-				<li>git add --all</li>
-				<li>git commit -m "kommentaar"</li>
-				<li>git push</li>
-			</ol>
-		<li>SQL</li>
-			<ul>
-				<li><a href="https://greeny.cs.tlu.ee/phpMyAdmin" class="special" target="_blank">greeny.cs.tlu.ee/phpMyAdmin</a> (ainult tunneliga)</li>
-				<li>greeny (putty): mysql -uif.. -pif.. if19_nimi</li>
-				<li><a href="https://drive.google.com/file/d/1D6fbPTO8rGHYYgZAKvO6muuCyUPgOfqD/view" class="special" target="_blank">SQL Server 2017</a></li>
-			</ul>
-		<li><a href="https://www.tlu.ee/dt/opingudoppetoo/dokumendid-ja-juhendid" class="special" target="_blank">Dokumendid ja juhendid</a></li>
-		<li>Erialasõnastikud: <a href="https://akit.cyber.ee/" class="special" target="_blank">Akit</a> | <a href="https://stats.cyber.ee/" class="special" target="_blank">Stats</a> | <a href="https://www.microsoft.com/en-us/language" class="special" target="_blank">Microsoft</a> | <a href="http://vallaste.ee/" class="special" target="_blank">Vallaste</a></li>
-	</ul>
+    <!-- Changelog bottom right corner -->
+    <div class="ribbon bottom-right posiFixed hotpink"><a class="aPopover"
+                                                          href="https://github.com/raimop/if19_schedule/commits/master"
+                                                          target="_blank">changelog</a></div>
+
+    <!-- Raimonds info container -->
+    <div class="infoContainer">
+        <div class="ver">2.0.1</div>
+        <div class="by"><a href="https://github.com/raimop">Raimo Pregel</a>, 2020</div>
+        <div class="by"><a href="https://github.com/raimop/if19_schedule">Source</a></div>
+    </div>
+
+    <h4>IF19</h4>
+
+    <!-- Tab container -->
+    <div class="tabs">
+        <!-- Input and Label for software development class 1 -->
+        <input class="input" id="tab-1" name="tabs" type="radio">
+        <label class="label" for="tab-1">TA I</label>
+
+        <!-- here is weekend names and classes with times for software development class 1 -->
+        <div class="panel">
+            <table class="gridTable" id="table1"></table>
+        </div>
+
+        <!-- Input and Label for software development class 1 -->
+        <input class="input" id="tab-2" name="tabs" type="radio">
+        <label class="label" for="tab-2">TA II</label>
+
+        <!-- here is weekend names and classes with times for software development class 2 -->
+        <div class="panel">
+            <table class="gridTable" id="table2"></table>
+        </div>
+
+        <!-- Input and Label for digital media -->
+        <input class="input" id="tab-3" name="tabs" type="radio">
+        <label class="label" for="tab-3">DM</label>
+
+        <!-- here is weekend names and classes with times for digital media -->
+        <div class="panel">
+            <table class="gridTable" id="table3"></table>
+        </div>
+    </div>
+
+    <!-- From here you can start writing more info -->
+
+    <h4>Üldinfo</h4>
+    <ul>
+        <li>
+            <a class="special"
+               href="https://www.tlu.ee/asio/kalenterit2/index.php?cluokka=IFIFB-1&kt=lk&guest=intranet%2Ftu&lang=est"
+               target="_blank">Tunniplaan</a> |
+            <a class="special" href="https://www.tlu.ee/masio/?id=ryhm&ryhm=IFIFB-1" target="_blank">Mobiilis</a>
+        </li>
+        <li>
+            <a class="special" href="https://ois2.tlu.ee/tluois/uus_ois2.tud_leht" target="_blank">ÕIS</a> |
+            <a class="special" href="http://dti.tlu.ee/digiois/study_programme_version.php?sp=IFIFB/19.DT"
+               target="_blank">Õppeained</a>
+        </li>
+        <li>
+            Tarkvara: <a class="special" href="https://azureforeducation.microsoft.com/devtools" target="_blank">Microsoftilt</a>
+            |
+            <a class="special" href="https://products.office.com/en/student/office-in-education" target="_blank">MS
+                Office</a> |
+            <a class="special"
+               href="https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?ws=c5b379d9-989b-e011-969d-0030487d8897"
+               target="_blank">Muu tarkvara</a> |
+            <a class="special" href="https://education.github.com/pack" target="_blank">GitHub Education</a>
+        </li>
+    </ul>
+
+    <h4>Juhised</h4>
+    <ul>
+        <li>Autentimine</li>
+        <ul>
+            <li>Student Admin:ifikas..</li>
+            <li>greeny.cs.tlu.ee | osa_eesnimest + osa_perenimest:pw</li>
+            <li>lin2.tlu.ee | ÕIS kasutaja:pw</li>
+            <li>Tunneli õpetus: <a class="special"
+                                   href="https://www.tlu.ee/sites/default/files/inline-files/Tunneli%20juhend-1.pdf"
+                                   target="_blank">FoxyProxyga</a> |
+                <a class="special"
+                   href="http://minitorn.tlu.ee/~jaagup/kool/java/kursused/09/veebipr/naited/greenytunnel/greenytunnel.pdf"
+                   target="_blank">localhostiga</a>
+            </li>
+        </ul>
+        <li>Git</li>
+        <ol>
+            <li>git status</li>
+            <li>git add --all</li>
+            <li>git commit -m "kommentaar"</li>
+            <li>git push</li>
+        </ol>
+        <li>SQL</li>
+        <ul>
+            <li><a class="special" href="https://greeny.cs.tlu.ee/phpMyAdmin" target="_blank">greeny.cs.tlu.ee/phpMyAdmin</a>
+                (ainult tunneliga)
+            </li>
+            <li>greeny (putty): mysql -uif.. -pif.. if19_nimi</li>
+            <li><a class="special" href="https://drive.google.com/file/d/1D6fbPTO8rGHYYgZAKvO6muuCyUPgOfqD/view"
+                   target="_blank">SQL Server 2017</a></li>
+        </ul>
+        <li><a class="special" href="https://www.tlu.ee/dt/opingudoppetoo/dokumendid-ja-juhendid" target="_blank">Dokumendid
+            ja juhendid</a></li>
+        <li>Erialasõnastikud: <a class="special" href="https://akit.cyber.ee/" target="_blank">Akit</a> | <a
+                class="special" href="https://stats.cyber.ee/" target="_blank">Stats</a> | <a
+                class="special" href="https://www.microsoft.com/en-us/language" target="_blank">Microsoft</a> | <a
+                class="special" href="http://vallaste.ee/" target="_blank">Vallaste</a></li>
+    </ul>
 
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<script src="app.js"></script>
+    <!-- ?? Some anonymous script ??-->
+    <script crossorigin="anonymous"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html> 
