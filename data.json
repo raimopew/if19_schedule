@@ -143,7 +143,11 @@
       "links": [
         [
           "#",
-          "null"
+          "https://github.com/eesrakenduste-arendamine-2020"
+        ],
+        [
+          "#",
+          "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
         ]
       ]
     },
@@ -164,7 +168,7 @@
       "links": [
         [
           "#",
-          "null"
+          "https://moodle.hitsa.ee/course/view.php?id=22589"
         ]
       ]
     }
