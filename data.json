@@ -14,16 +14,16 @@
       ],
       "links": [
         [
-          "#",
-          "https://ois2.tlu.ee/tluois/aine/IFI6208.DT"
+          "https://ois2.tlu.ee/tluois/aine/IFI6208.DT",
+          "Õis2"
         ],
         [
-          "#",
-          "http://www.tlu.ee/~jaagup/"
+          "http://www.tlu.ee/~jaagup/",
+          "Jaagupi lehekülg"
         ],
         [
-          "#",
-          "http://minitorn.tlu.ee/~jaagup/kool/java/kursused/20/yldotstarbelised_arendusplatvormid/juht.html"
+          "http://minitorn.tlu.ee/~jaagup/kool/java/kursused/20/yldotstarbelised_arendusplatvormid/juht.html",
+          "Üldotstarbelised arendusplatvormid"
         ]
       ]
     },
@@ -43,12 +43,12 @@
       ],
       "links": [
         [
-          "#",
-          "https://ois2.tlu.ee/tluois/aine/IFI6207.DT"
+          "https://ois2.tlu.ee/tluois/aine/IFI6207.DT",
+          "Õis 2"
         ],
         [
-          "#",
-          "https://drive.google.com/drive/u/2/folders/1IPmh0rqxsttsjHpzqhmVSV_gkDY4edfF"
+          "https://drive.google.com/drive/u/2/folders/1IPmh0rqxsttsjHpzqhmVSV_gkDY4edfF",
+          "Google Drive"
         ]
       ]
     },
@@ -64,8 +64,8 @@
       ],
       "links": [
         [
-          "#",
-          "https://ois2.tlu.ee/tluois/aine/IFI6214.DT"
+          "https://ois2.tlu.ee/tluois/aine/IFI6214.DT",
+          "Õis 2"
         ]
       ]
     },
@@ -83,8 +83,8 @@
       ],
       "links": [
         [
-          "#",
-          "http://www.tlu.ee/~ray/"
+          "http://www.tlu.ee/~ray/",
+          "Raimondi lehekülg"
         ]
       ]
     },
@@ -101,12 +101,12 @@
       ],
       "links": [
         [
-          "#",
-          "https://ois2.tlu.ee/tluois/aine/MLM6214.DT"
+          "https://ois2.tlu.ee/tluois/aine/MLM6214.DT",
+          "Õis2"
         ],
         [
-          "#",
-          "https://moodle.hitsa.ee/course/view.php?id=28469"
+          "https://moodle.hitsa.ee/course/view.php?id=28469",
+          "Moodle"
         ]
       ]
     },
@@ -122,7 +122,7 @@
       ],
       "links": [
         [
-          "#",
+          "Kahjuks puudub",
           "null"
         ]
       ]
@@ -142,12 +142,12 @@
       ],
       "links": [
         [
-          "#",
-          "https://github.com/eesrakenduste-arendamine-2020"
+          "https://github.com/eesrakenduste-arendamine-2020",
+          "Git Hub"
         ],
         [
-          "#",
-          "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+          "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
+          "Css tricks"
         ]
       ]
     },
@@ -167,8 +167,8 @@
       ],
       "links": [
         [
-          "#",
-          "https://moodle.hitsa.ee/course/view.php?id=22589"
+          "https://moodle.hitsa.ee/course/view.php?id=22589",
+          "Moodle"
         ]
       ]
     }
