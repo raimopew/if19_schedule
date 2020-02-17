@@ -11,7 +11,7 @@ var currentTab;
 let params;
 
 var day = new Date().getDay();
-var days = ["Pühapäev", "Esmaspäev", "Teisipäev", "Kolmapäev", "Neljapäev", "Reede", "Lauppäev"];
+var days = ["Pühapäev", "Esmaspäev", "Teisipäev", "Kolmapäev", "Neljapäev", "Reede", "Laupäev"];
 
 let jsonUrl = "data.json";
 
