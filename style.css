@@ -1,8 +1,32 @@
 @import url(https://fonts.googleapis.com/css?family=Karla);
 
+:root {
+    /* Define variables for light colors,
+       we can later redefine these for
+       the dark mode */
+    --text-color-normal: #000;
+    --text-color-accent: #e85a4f;
+    --text-color-link: #e98074;
+    --background: #eae7dc;
+    --box-border: #8e8d8a;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Redefine variables for dark mode */
+        --text-color-normal: #fff;
+        --text-color-accent: #e85a4f;
+        --text-color-link: #edf5e1;
+        --background: #000;
+        --box-border: var(--text-color-normal);
+    }
+
+}
+
 html, body {
     height: 100%;
-    background-color: #EAE7DC;
+    background-color: var(--background);
     margin: 0;
     font-family: 'Karla', sans-serif;
 }
@@ -46,7 +70,7 @@ h6 {
 
 a:link, a:visited {
     text-decoration: none;
-    color: black;
+    color: var(--text-color-normal);
 }
 
 .gridTable {
@@ -56,12 +80,12 @@ a:link, a:visited {
     grid-auto-flow: row;
     align-items: stretch;
     justify-content: space-evenly;
-    background-color: #EAE7DC;
+    background-color: var(--background);
 }
 
 .handdrawnbox {
     border-collapse: separate !important;
-    border: 2px solid #8E8D8A;;
+    border: 2px solid #8E8D8A;
     border-bottom-left-radius: 20px 150px;
     border-bottom-right-radius: 225px 20px;
     border-top-left-radius: 255px 15px;
@@ -105,7 +129,7 @@ a:link, a:visited {
     border-top-right-radius: 15px 225px;
 
     padding: 5px 5px 5px 5px;
-    color: #EAE7DC;
+    color: var(--background);
 }
 
 
@@ -114,18 +138,18 @@ a.special {
 }
 
 a.aPopover {
-    color: #EAE7DC;
+    color: var(--background);
 }
 
 a.special:hover, a.aPopover:hover {
     border-collapse: separate !important;
-    border-bottom: 1px solid #EAE7DC;
+    border-bottom: 1px solid var(--background);
     border-bottom-left-radius: 20px 0px;
     border-bottom-right-radius: 225px 20px;
 }
 
 a.aPopover:hover {
-    color: black;
+    color: var(--text-color-normal);
 }
 
 a:hover {
@@ -133,14 +157,15 @@ a:hover {
 }
 
 a.special:hover {
-    color: black;
+    color: var(--text-color-normal);
 }
 
 .container {
     height: 100%;
     width: 70%;
     margin: 0 auto;
-    background-color: #EAE7DC;
+    background-color: var(--background);
+    color: var(--text-color-normal);
 }
 
 .infoContainer {
@@ -178,11 +203,11 @@ a.special:hover {
 .label {
     width: auto;
     padding: 0px 10px;
-    color: black;
+    color: var(--text-color-normal);
 }
 
 .label:hover {
-    color: #e85a4f;
+    color: var(--text-color-accent);
 }
 
 .input:focus + .label {
@@ -190,7 +215,7 @@ a.special:hover {
 }
 
 .input:checked + .label {
-    background: #e85a4f;
+    background: var(--text-color-accent);
     color: white !important;
 }
 
@@ -199,13 +224,12 @@ a.special:hover {
     display: none;
     width: 100%;
     margin: 0 auto;
-    background: #EAE7DC;
+    background: var(--background);
 }
 
 .customize, .theme, .toggleImg {
     display: inline;
-    float: right;
-    color: #444340;
+    color: var(--text-color-normal);
 }
 
 .icon {
