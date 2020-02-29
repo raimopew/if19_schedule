@@ -1,17 +1,10 @@
 /* jshint esversion: 6 */
 
-var theme = {
-    color: "light",
-    highlight: "#D8C3A5",
-    light: "Switch to dark",
-    dark: "Switch to light"
-};
-
-var currentTab;
+let currentTab;
 let params;
 
-var day = new Date().getDay();
-var days = ["Pühapäev", "Esmaspäev", "Teisipäev", "Kolmapäev", "Neljapäev", "Reede", "Lauppäev"];
+let day = new Date().getDay();
+let days = ["Pühapäev", "Esmaspäev", "Teisipäev", "Kolmapäev", "Neljapäev", "Reede", "Laupäev"];
 
 let jsonUrl = "data.json";
 
@@ -28,7 +21,6 @@ $(document).ready(() => {
 
     if (!params.has("theme") && !params.has("group")) {
         params.append("group", "1");
-        params.append("theme", "light");
         params.append("showIcons", "false");
         updateSearchParams();
     }
@@ -41,12 +33,6 @@ $(document).ready(() => {
         checkedTab(false, false, true);
     }
 
-    if (params.has("theme") && params.get("theme") === "dark") {
-        changeTheme("dark");
-    } else {
-        $('.theme').html(theme.light);
-    }
-
     $('#tab-1').on('click', () => {
         updateGroup("1");
     });
@@ -55,10 +41,6 @@ $(document).ready(() => {
     });
     $('#tab-3').on('click', () => {
         updateGroup("3");
-    });
-
-    $('.theme').on('click', (e) => {
-        theme.color === "light" ? changeTheme("dark") : changeTheme("light");
     });
 
     createContent(data.first, "table1");
@@ -243,66 +225,6 @@ function createSpan(content, className, popover) {
     return span;
 }
 
-/* Changes theme to either Dark or Light*/
-function changeTheme(color) {
-    theme.color = color;
-
-    /* Dark mode */
-    if (color === "dark") {
-        $('.theme').html(theme.dark);
-        theme.highlight = "#303030";
-        params.set("theme", "dark");
-        updateSearchParams();
-
-        let defaultDark = {"background-color": "black", "color": "white"};
-        $('body,html').css(defaultDark);
-        $('.container').css(defaultDark);
-        $('.table').css(defaultDark);
-        $('a:link, a:visited, a.special:hover').css("color", "#8EE4AF");
-
-        $('a.special').css("color", "#EDF5E1");
-        $('.more a.under:hover').css({"color": "white", "border-color": "#EDF5E1"});
-
-        $('.handdrawnbox').css("border", "2px solid #fff");
-        $('.label').css("color", "white");
-
-        /* sets panel background to default */
-        $('.panel').css("background", "black");
-
-        /* sets grind table background color to default */
-        $('.gridTable').css("background-color", "black")
-
-        /* Light mode */
-    } else if (color === "light") {
-        $('.theme').html(theme.light);
-        theme.highlight = "#D8C3A5";
-
-        /* Sets theme to light */
-        params.set("theme", "light");
-        updateSearchParams();
-
-
-        let defaultLight = {"background-color": "#EAE7DC", "color": "black"};
-        $('body,html').css(defaultLight);
-        $('.container').css(defaultLight);
-        $('.table').css(defaultLight);
-        $('a:link, a:visited, a.special:hover').css("color", "black");
-
-        $('a.special').css("color", "#e85a4f");
-        $('.more a.under:hover').css({"color": "black", "border-color": "#e85a4f"});
-
-        $('.handdrawnbox').css("border", "2px solid #000");
-        $('.label').css("color", "black");
-
-        /* sets panel background to default */
-        $('.panel').css("background", "#EAE7DC");
-
-        /* sets grind table background color to default */
-        $('.gridTable').css("background-color", "#EAE7DC")
-    }
-    highlightDay();
-}
-
 function checkedTab(statement1, statement2, statement3) {
     $('#tab-1').attr("checked", statement1);
     $('#tab-2').attr("checked", statement2);
@@ -313,7 +235,7 @@ function highlightDay() {
     if (day === 6 || day === 0) {
         $('#noHighlight').html("No highlight due to it being " + days[day]);
     } else {
-        $('.handdrawnbox.' + days[day]).css({"background-color": theme.highlight});
+        $('.handdrawnbox.' + days[day]);
         $('#noHighlight').html("Classes (if any) on " + days[day] + " highlighted");
     }
 }
